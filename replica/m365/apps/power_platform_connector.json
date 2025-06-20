@@ -1,0 +1,33 @@
+{
+  "name": "GraphConnectorAPI",
+  "description": "Custom connector for Microsoft 365 Copilot using Azure AD app registration.",
+  "iconBrandColor": "#0078D4",
+  "backgroundColor": "#FFFFFF",
+  "actions": [
+    {
+      "operationId": "GetItems",
+      "name": "Get Items",
+      "description": "Get all items from the API.",
+      "visibility": "important",
+      "operationType": "get",
+      "urlTemplate": "/api/items",
+      "response": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "title": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    }
+  ],
+  "auth": {
+    "type": "OAuth2",
+    "identityProvider": "aad",
+    "clientId": "YOUR_CLIENT_ID",
+    "scopes": ["https://graph.microsoft.com/.default"]
+  }
+}

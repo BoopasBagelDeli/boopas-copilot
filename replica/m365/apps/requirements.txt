@@ -1,0 +1,6 @@
+flask
+pyjwt==2.8.0
+requests
+gunicorn
+# For production, add:
+# msal
